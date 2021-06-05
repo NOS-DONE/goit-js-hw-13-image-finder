@@ -13,4 +13,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./apiService":"eQwa","../templates/images.hbs":"Uxz5"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/app.js");
 },{"./sass/main.scss":"clu1","./js/app.js":"QdeU"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-13-image-finder/src.0eecfc26.js.map
+//# sourceMappingURL=/goit-js-hw-13-image-finder/src.e17f901f.js.map
