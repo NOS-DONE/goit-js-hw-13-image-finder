@@ -2,7 +2,7 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: first baseline;
+  justify-content: flex-start;
   // border: 2px solid rgb(226, 226, 226);
   padding: 50px;
   margin: 30px;
@@ -18,8 +18,11 @@ img {
 .images-con {
   margin-right: 10px;
   margin-bottom: 10px;
-  height: auto;
-  margin-right: 25px;
+  height: 200px;
+  width: 400px;
+  margin-right: 5px;
+  margin-bottom: 25px;
+  overflow: hidden;
 }
 
 .stats {
