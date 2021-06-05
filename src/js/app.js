@@ -15,20 +15,38 @@ function searchInputHandler(event) {
     event.preventDefault();
 
     clearImagesContainer();
+    loadMoreButtonRef.classList.add('is-hidden');
     apiService.query = event.currentTarget.elements.query.value;
     apiService.resetPage();
-    apiService.fetchImages().then(images => {
-        console.log(images);
-        renderImagesMurkup(images);
-        loadMoreButtonRef.classList.remove('is-hidden');
-    });
+    apiService.fetchImages()
+        .then(images => {
+            loadMoreButtonRef.classList.remove('is-hidden');  
+
+            if (images.length === 0) {
+                loadMoreButtonRef.classList.add('is-hidden');  
+            }
+                        
+            if (images.length !== 0) {
+                renderImagesMurkup(images);
+                return;
+            }
+
+            galleryRef.innerHTML = '<h3>Nothing was found...</h3>';
+
+        
+        })
+        .catch(error => {
+            galleryRef.innerHTML = '<h3>something went wrong...</h3>';
+            console.log(error);
+        });
 
     
 
 }
 
 function loadMoreButtonHandler() {
-    apiService.fetchImages().then(renderImagesMurkup);
+    apiService.fetchImages()
+        .then((images) => {renderImagesMurkup(images)});
 
 
 }
