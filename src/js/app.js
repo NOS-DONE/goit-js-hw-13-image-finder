@@ -27,7 +27,8 @@ function searchInputHandler(event) {
                 console.log(images.length);
                 hideElement(loadMoreButtonRef, true);
 
-                galleryRef.innerHTML = '<h3>Nothing was found...</h3>';
+                galleryRef.innerHTML = '<h3 class="end-of-search"> Nothing was found...</h3>';
+                
             }
             
             if (images.length !== 0) {
@@ -57,7 +58,6 @@ function renderImagesMurkup(imagesArr) {
     galleryRef.scrollIntoView({
         behavior: 'smooth',
         block: 'end',
-        // alignToTop: false, 
     });
 }
 
